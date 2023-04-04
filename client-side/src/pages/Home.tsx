@@ -10,7 +10,7 @@ const HomePage: React.FC = () => {
       <div className={classes.column1}></div>
 
       <div className={classes.column2}>
-        <h1 className={classes.title}>Welcome to shiba inu shop</h1>
+        <h1 className={classes.title}>Welcome to Tada shiba shop</h1>
         <p className={classes.subtitle}>
           There is everything Shiba wants in here.
         </p>
