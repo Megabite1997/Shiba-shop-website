@@ -1,0 +1,28 @@
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 2rem 1rem;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  /* visibility: hidden; */
+}
+
+.unorder-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 6rem;
+}
+
+.unorder-list li a {
+  text-decoration: none;
+}
+
+.unorder-list a:hover,
+.unorder-list a.active {
+  color: brown;
+  text-decoration: underline;
+}
