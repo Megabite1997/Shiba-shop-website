@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import classes from "./Home.module.css";
+import { BiBone } from "react-icons/bi";
 
 const HomePage: React.FC = () => {
   return (
@@ -15,16 +16,28 @@ const HomePage: React.FC = () => {
         </p>
         <ul className={classes[`shop-list`]}>
           <li>
-            <Link to="food">food</Link>
+            <Link to="food">
+              <BiBone />
+              <p>food</p>
+            </Link>
           </li>
           <li>
-            <Link to="toys">toys</Link>
+            <Link to="toys">
+              <BiBone />
+              <p>toys</p>
+            </Link>
           </li>
           <li>
-            <Link to="clothes">clothes</Link>
+            <Link to="clothes">
+              <BiBone />
+              <p>clothes</p>
+            </Link>
           </li>
           <li>
-            <Link to="shop-and-accessories">shoes & accessories</Link>
+            <Link to="shop-and-accessories">
+              <BiBone />
+              <p>shoes & accessories</p>
+            </Link>
           </li>
         </ul>
       </div>

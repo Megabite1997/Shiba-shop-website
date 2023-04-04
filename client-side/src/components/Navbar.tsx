@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
         <ul className={classes[`unorder-list`]}>
           <li>
             <NavLink
-              to=""
+              to="/"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
