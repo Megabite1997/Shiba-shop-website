@@ -2,8 +2,8 @@ import React, { FunctionComponent } from "react";
 
 const ProductsPage: FunctionComponent = () => {
   return (
-    <div className="pt-40 text-center">
-      <h1 className="font-bold text-xl">Products Page</h1>
+    <div className="h-screen bg-yellow-400">
+      <h1 className="pt-40 font-bold text-xl text-center">Products Page</h1>
     </div>
   );
 };
