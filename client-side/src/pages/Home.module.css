@@ -16,42 +16,9 @@
   animation: fadeIn 1s;
 }
 
-.image-shiba-smile {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .column2 {
   margin-top: 30%;
   animation: fadeIn 2s;
-}
-
-.column2 .title {
-  /* text-transform: capitalize; */
-  font-size: 40px;
-}
-
-.shop-list {
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-.shop-list li {
-  margin: 20px 0;
-  font-size: 20px;
-  text-transform: capitalize;
-}
-
-.shop-list li a {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.shop-list li a:hover {
-  text-decoration: underline;
-  color: brown;
 }
 
 @keyframes fadeIn {
