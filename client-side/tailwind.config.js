@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         "shiba-yellow": "#fdc724",
+        antiquewhite: "#faebd7",
       },
 
       keyframes: {
