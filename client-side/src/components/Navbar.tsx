@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
       <nav>
         <ul className="list-none m-0 p-0 flex w-full gap-20 mr-10">
           {listNavbarLinks.map((element, index) => (
-            <li>
+            <li key={index}>
               <NavLink
                 to={element.path}
                 className={({ isActive }) =>
