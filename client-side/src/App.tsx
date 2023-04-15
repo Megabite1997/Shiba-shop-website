@@ -10,6 +10,7 @@ import RegistrationPage from "./pages/Registration";
 import ErrorPage from "./pages/Error";
 import Toys from "./pages/Products/Toys";
 import Food from "./pages/Products/Food";
+import ContactUs from "./pages/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: "products/food", element: <Food /> },
       { path: "products/toys", element: <Toys /> },
       { path: "about-us", element: <AboutUsPage /> },
+      { path: "contact-us", element: <ContactUs /> },
       { path: "login", element: <LoginPage /> },
       { path: "register", element: <RegistrationPage /> },
     ],
