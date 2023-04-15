@@ -55,7 +55,7 @@ const LoginPage: React.FC = () => {
               type="submit"
               className="bg-shiba-yellow mt-10 py-1 px-8 rounded-2xl cursor-pointer"
             >
-              Login
+              Sign Up
             </button>
           </div>
 
@@ -66,12 +66,12 @@ const LoginPage: React.FC = () => {
                 className="text-amber-500 hover:underline ml-1"
                 to="/register"
               >
-                Sign Up
+                Register
               </Link>
             </p>
           </div>
         </div>
-        <div className="pt-60">
+        <div className="pt-60 animate-fade-in">
           <img src={ImageShibaSit} alt="Shiba sits" />
         </div>
       </div>

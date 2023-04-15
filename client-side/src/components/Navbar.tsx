@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     { name: "Products", path: "products" },
     { name: "About Us", path: "about-us" },
     { name: "Contact Us", path: "contact-us" },
-    { name: "Login / Sign Up", path: "login" },
+    { name: "Login / Register", path: "login" },
   ];
 
   return (
