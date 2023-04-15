@@ -24,7 +24,6 @@ const LoginPage: React.FC = () => {
               <input
                 type="email"
                 placeholder="Email"
-                autoFocus
                 className="border border-slate-400 rounded-2xl w-full p-2 pl-5 mt-2"
               />
             </div>
