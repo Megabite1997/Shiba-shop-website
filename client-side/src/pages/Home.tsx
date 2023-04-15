@@ -1,23 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import classes from "./Home.module.css";
 import { BiBone } from "react-icons/bi";
 
 const HomePage: React.FC = () => {
   const listSubPages = [
-    { name: "food", path: "food" },
-    { name: "toys", path: "toys" },
-    { name: "clothes", path: "clothes" },
-    { name: "shoes & accessories", path: "accessories" },
+    { name: "food", path: "products/food" },
+    { name: "toys", path: "products/toys" },
+    { name: "clothes", path: "products/clothes" },
+    { name: "shoes & accessories", path: "products/accessories" },
   ];
 
   return (
-    <div className={classes.container}>
-      <div className={classes.column1}></div>
+    <div className="grid md:grid-cols-2 w-full h-screen pt-24 bg-shiba-yellow">
+      <div className="bg-shiba-smile w-full h-full bg-cover animate-fade-in"></div>
 
-      <div className={classes.column2}>
-        <h1 className="text-5xl">Welcome to Tada & Shiba shop</h1>
+      <div className="md:mt-[30%] animate-fade-in">
+        <h1 className="text-5xl ">Welcome to Tada & Shiba shop</h1>
         <p className="mt-5 mb-10">There is everything Shiba wants in here.</p>
         <ul className="mt-5 ml-5 grid gap-5 w-6/12 capitalize">
           {listSubPages.map((element, index) => (
