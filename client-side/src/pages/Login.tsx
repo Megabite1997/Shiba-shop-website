@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import ImageShibaSit from "../assets/shiba-sit.jpg";
 
 const LoginPage: React.FC = () => {
   const handleSubmit = (event: React.FormEvent): void => {
@@ -6,34 +9,58 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <form className="pt-40 pb-32 bg-yellow-400" onSubmit={handleSubmit}>
-      <div className="mx-96 p-20 bg-red-400">
-        <h1 className="text-2xl text-center">Login Page</h1>
+    <form onSubmit={handleSubmit}>
+      <div className="grid md:grid-cols-2  bg-shiba-yellow">
+        <div className="bg-white pt-44 px-28 h-screen">
+          <div className="mb-10">
+            <h1 className="font-bold text-4xl mb-2">Welcome back </h1>
+            <p className="ml-1">please enter your details</p>
+          </div>
 
-        <div className="mt-10">
-          <label>E-mail</label>
-          <div>
-            <input
-              type="email"
-              className="border-2 border-rose-600 w-full p-0.5"
-            />
+          <h1 className="text-2xl">Log In</h1>
+          <div className="mt-8 mx-2">
+            <div>
+              <label className="ml-1">E-mail</label>
+              <input
+                type="email"
+                placeholder="Email"
+                autoFocus
+                className="border border-slate-400 rounded-2xl w-full p-2 pl-5 mt-2"
+              />
+            </div>
+          </div>
+
+          <div className="mt-8 mx-2">
+            <div>
+              <label className="ml-1">Password</label>
+              <input
+                type="text"
+                placeholder="Password"
+                className="border border-slate-400 rounded-2xl w-full p-2 pl-5 mt-2"
+              />
+            </div>
+          </div>
+
+          <div className="mx-2 text-right mt-4 mr-4">
+            <Link
+              className="hover:underline text-yellow-500"
+              to="forget-password"
+            >
+              Forget password?
+            </Link>
+          </div>
+
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-shiba-yellow mt-10 py-1 px-8 rounded-2xl cursor-pointer"
+            >
+              Login
+            </button>
           </div>
         </div>
-
-        <div className="mt-10">
-          <label>Password</label>
-          <div>
-            <input
-              type="text"
-              className="border-2 border-rose-600 w-full p-0.5"
-            />
-          </div>
-        </div>
-
-        <div className="text-center">
-          <button type="submit" className="bg-green-400 mt-10 py-1 px-8">
-            Login
-          </button>
+        <div className="pt-60">
+          <img src={ImageShibaSit} alt="Shiba sits" />
         </div>
       </div>
     </form>
