@@ -1,66 +1,35 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import classes from "./Navbar.module.css";
+import { NavLink, Link } from "react-router-dom";
+import ImageLogo from "../assets/Logo.png";
 
 const Navbar: React.FC = () => {
+  const listNavbarLinks = [
+    { name: "Products", path: "products" },
+    { name: "About Us", path: "about-us" },
+    { name: "Contact Us", path: "contact-us" },
+    { name: "Login / Sign Up", path: "login" },
+  ];
+
   return (
-    <header className={classes.header}>
-      <nav className={classes.navbar}>
-        <ul className={classes[`unorder-list`]}>
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-            >
-              Home
-            </NavLink>
-          </li>
+    <header className="fixed w-full flex bg-antiquewhite items-center justify-end p-4 shadow-lg">
+      <Link className="mr-auto" to="/">
+        <img className="w-44" src={ImageLogo} alt="Logo" />
+      </Link>
 
-          <li>
-            <NavLink
-              to="products"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-            >
-              Products
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink
-              to="about-us"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-            >
-              About Us
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink
-              to="login"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-            >
-              Login
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink
-              to="register"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-            >
-              Register
-            </NavLink>
-          </li>
+      <nav>
+        <ul className="list-none m-0 p-0 flex w-full gap-20 mr-10">
+          {listNavbarLinks.map((element, index) => (
+            <li>
+              <NavLink
+                to={element.path}
+                className={({ isActive }) =>
+                  isActive ? "text-amber-600 " : "hover:text-amber-600"
+                }
+              >
+                {element.name}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
