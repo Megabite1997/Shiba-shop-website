@@ -43,8 +43,8 @@ const LoginPage: React.FC = () => {
 
           <div className="mx-2 text-right mt-4 mr-4">
             <Link
-              className="hover:underline text-yellow-500"
-              to="forget-password"
+              className="hover:underline text-amber-500"
+              to="/forget-password"
             >
               Forget password?
             </Link>
@@ -57,6 +57,18 @@ const LoginPage: React.FC = () => {
             >
               Login
             </button>
+          </div>
+
+          <div>
+            <p className="text-center mt-8">
+              Don't have an account?
+              <Link
+                className="text-amber-500 hover:underline ml-1"
+                to="/register"
+              >
+                Sign Up
+              </Link>
+            </p>
           </div>
         </div>
         <div className="pt-60">
