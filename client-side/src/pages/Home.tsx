@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
         <p className="mt-5 mb-10">There is everything Shiba wants in here.</p>
         <ul className="mt-5 ml-5 grid gap-5 w-6/12 capitalize">
           {listSubPages.map((element, index) => (
-            <li key={index}>
+            <li className="hover:animate-tilt-shaking" key={index}>
               <Link
                 className="flex gap-2.5 p-2 items-center bg-white hover:underline hover:text-amber-700 rounded-xl"
                 to={element.path}

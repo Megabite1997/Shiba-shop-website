@@ -16,9 +16,17 @@ module.exports = {
             opacity: "1",
           },
         },
+        tilt_shaking: {
+          "0%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(3deg)" },
+          "50%": { transform: "rotate(0eg)" },
+          "75% ": { transform: "rotate(-3deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
       },
       animation: {
         "fade-in": "fadeIn 2s",
+        "tilt-shaking": "tilt_shaking 0.5s infinite",
       },
       backgroundImage: {
         "shiba-smile": "url('/src/assets/shiba-no-bg.png')",
