@@ -26,7 +26,7 @@ module.exports = {
         },
       },
       animation: {
-        "fade-in": "fadeIn 2s",
+        "fade-in": "fadeIn 1s",
         "tilt-shaking": "tilt_shaking 0.5s infinite",
       },
       backgroundImage: {
