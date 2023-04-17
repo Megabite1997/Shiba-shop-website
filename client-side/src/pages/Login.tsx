@@ -82,7 +82,7 @@ const LoginPage: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="pt-60 animate-fade-in">
+        <div className="pt-60 ">
           <img src={ImageShibaSit} alt="Shiba sits" />
         </div>
       </div>
