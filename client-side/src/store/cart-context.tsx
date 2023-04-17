@@ -14,10 +14,12 @@ interface CartProps {
 
 interface CartContextProps {
   cart: CartProps[];
+  addItemsHandler: (item: CartProps) => void;
 }
 
 const CartContext = React.createContext<CartContextProps>({
   cart: [],
+  addItemsHandler: (item) => {},
 });
 
 export const CartContextProvider: FC<Props> = (props) => {
@@ -28,7 +30,7 @@ export const CartContextProvider: FC<Props> = (props) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart: cart }}>
+    <CartContext.Provider value={{ cart: cart, addItemsHandler }}>
       {props.children}
     </CartContext.Provider>
   );
