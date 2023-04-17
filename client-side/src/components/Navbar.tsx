@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import ImageLogo from "../assets/Logo.png";
+import { VscAccount } from "react-icons/vsc";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Navbar: React.FC = () => {
   const listNavbarLinks = [
@@ -8,6 +10,7 @@ const Navbar: React.FC = () => {
     { name: "About Us", path: "about-us" },
     { name: "Contact Us", path: "contact-us" },
     { name: "Login / Register", path: "login" },
+    { name: "Cart", path: "cart" },
   ];
 
   return (
@@ -19,13 +22,19 @@ const Navbar: React.FC = () => {
       <nav>
         <ul className="list-none m-0 p-0 flex w-full gap-20 mr-10">
           {listNavbarLinks.map((element, index) => (
-            <li key={index}>
+            <li className="text-lg font-medium" key={index}>
               <NavLink
                 to={element.path}
                 className={({ isActive }) =>
-                  isActive ? "text-amber-600 " : "hover:text-amber-600"
+                  isActive
+                    ? "flex items-center gap-2 text-amber-600 "
+                    : "flex items-center gap-2 hover:text-amber-600"
                 }
               >
+                {element.path === "login" ? <VscAccount /> : undefined}
+                {element.path === "cart" ? (
+                  <AiOutlineShoppingCart />
+                ) : undefined}
                 {element.name}
               </NavLink>
             </li>
