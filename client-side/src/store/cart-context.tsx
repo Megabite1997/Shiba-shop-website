@@ -7,9 +7,11 @@ interface Props {
 interface CartProps {
   image: string;
   name: string;
+  id: number;
   details: string;
   stars: number;
   price: number;
+  quantity: number;
 }
 
 interface CartContextProps {
