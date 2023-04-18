@@ -11,6 +11,7 @@ import ErrorPage from "./pages/Error";
 import Toys from "./pages/Products/Toys";
 import Food from "./pages/Products/Food";
 import ContactUs from "./pages/ContactUs";
+import Cart from "./pages/Cart";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
       { path: "contact-us", element: <ContactUs /> },
       { path: "login", element: <LoginPage /> },
       { path: "register", element: <RegistrationPage /> },
+      { path: "cart", element: <Cart /> },
     ],
   },
 ]);
