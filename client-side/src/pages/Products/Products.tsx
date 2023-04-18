@@ -11,6 +11,7 @@ import CartContext from "../../store/cart-context";
 interface listRecommendedItemsProps {
   image: string;
   name: string;
+  id: number;
   details: string;
   stars: number;
   price: number;
@@ -20,7 +21,7 @@ const ProductsPage: FunctionComponent = () => {
   const CartCtx = useContext(CartContext);
 
   const addCartHandler = (element: listRecommendedItemsProps) => {
-    console.log("element: ", element);
+    CartCtx.addItemsHandler({ ...element, quantity: 1 });
   };
 
   const listSubPages = [
@@ -35,27 +36,31 @@ const ProductsPage: FunctionComponent = () => {
     {
       image: ImagePedigree,
       name: "Pedigree",
+      id: 1,
       details: "Dog food for full growth",
       stars: 3.5,
-      price: 40,
+      price: 36,
     },
     {
       image: ImageProPlan,
       name: "Purina Pro Plan",
+      id: 2,
       details: "Dog food for full growth",
       stars: 4.2,
       price: 40,
     },
     {
       image: ImageBlue,
-      name: "Pedigree",
+      name: "Blue",
+      id: 3,
       details: "Dog food for full growth",
       stars: 4.4,
-      price: 40,
+      price: 48,
     },
     {
       image: ImagePurinaBeggine,
       name: "Purina Beggin",
+      id: 4,
       details: "Strips Real Meat with Bacon & Beef Flavored Dog Treats",
       stars: 4,
       price: 12,
