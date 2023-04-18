@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import ImageShibaSit from "../assets/shiba-sit.jpg";
+import ImageShibaSit from "../assets/shiba/shiba-sit.jpg";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const LoginPage: React.FC = () => {

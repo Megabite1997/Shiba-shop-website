@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useContext } from "react";
 import { Link } from "react-router-dom";
 
-import ImagePedigree from "../../assets/pedigree.webp";
-import ImageProPlan from "../../assets/purina-pro-plan.webp";
-import ImageBlue from "../../assets/blue.webp";
-import ImagePurinaBeggine from "../../assets/purina-beggin.webp";
+import ImagePedigree from "../../assets/food/pedigree.webp";
+import ImageProPlan from "../../assets/food/purina-pro-plan.webp";
+import ImageBlue from "../../assets/food/blue.webp";
+import ImagePurinaBeggine from "../../assets/food/purina-beggin.webp";
 
 import CartContext from "../../store/cart-context";
 
