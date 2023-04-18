@@ -30,7 +30,7 @@ module.exports = {
         "tilt-shaking": "tilt_shaking 0.5s infinite",
       },
       backgroundImage: {
-        "shiba-smile": "url('/src/assets/shiba-no-bg.png')",
+        "shiba-smile": "url('/src/assets/shiba/shiba-no-bg.png')",
       },
     },
   },
