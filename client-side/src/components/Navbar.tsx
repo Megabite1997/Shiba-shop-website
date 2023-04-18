@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
 import ImageLogo from "../assets/Logo.png";
 import { VscAccount } from "react-icons/vsc";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import CartContext from "../store/cart-context";
 
 const Navbar: React.FC = () => {
+  const CartCtx = useContext(CartContext);
+
   const listNavbarLinks = [
     { name: "Products", path: "products" },
     { name: "About Us", path: "about-us" },
@@ -33,7 +36,10 @@ const Navbar: React.FC = () => {
               >
                 {element.path === "login" ? <VscAccount /> : undefined}
                 {element.path === "cart" ? (
-                  <AiOutlineShoppingCart />
+                  <>
+                    {CartCtx.cart.length}
+                    <AiOutlineShoppingCart />
+                  </>
                 ) : undefined}
                 {element.name}
               </NavLink>
