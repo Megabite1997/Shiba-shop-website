@@ -19,7 +19,7 @@ const RegistrationPage: React.FC = () => {
         <div className="bg-white pt-44 px-28 h-screen">
           <h1 className="font-bold text-4xl mb-12">Create an Account </h1>
 
-          <div className="flex gap-6 mt-8 mx-2">
+          <div className="grid grid-flow-col gap-6 mt-8 mx-2">
             <div>
               <label className="ml-1">First Name</label>
               <input

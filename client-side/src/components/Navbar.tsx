@@ -37,7 +37,9 @@ const Navbar: React.FC = () => {
                 {element.path === "login" ? <VscAccount /> : undefined}
                 {element.path === "cart" ? (
                   <>
-                    {CartCtx.cart.length}
+                    <div className="bg-white py-1 px-3 rounded-full">
+                      {CartCtx.cart.length}
+                    </div>
                     <AiOutlineShoppingCart />
                   </>
                 ) : undefined}

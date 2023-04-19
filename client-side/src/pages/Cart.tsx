@@ -26,7 +26,7 @@ const Cart: FC<CartProps> = ({}) => {
             </Link>{" "}
             to see items you may have added from another computer or device.
           </p>
-          <img className="mx-auto mt-10" src={ImageEmptyBox} alt="Empty box" />
+          <img className="mx-auto mt-10 " src={ImageEmptyBox} alt="Empty box" />
         </div>
       )}
 

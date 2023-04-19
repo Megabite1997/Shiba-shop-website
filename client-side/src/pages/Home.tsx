@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
           {listSubPages.map((element, index) => (
             <li className="hover:animate-tilt-shaking" key={index}>
               <Link
-                className="flex gap-2.5 p-2 items-center bg-white hover:underline hover:text-amber-700 rounded-xl"
+                className="grid grid-flow-col gap-2.5 p-2 items-center bg-white hover:underline hover:text-amber-700 rounded-xl"
                 to={element.path}
               >
                 <BiBone />
