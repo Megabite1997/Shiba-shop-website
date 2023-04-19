@@ -32,14 +32,14 @@ const Table: FC<TableProps> = ({}) => {
         {CartCtx.cart.map((element, index) => (
           <div key={index}>
             <div className="grid grid-cols-4">
-              <div className="w-44 p-2 bg-white">
+              <div className="w-44 p-2 bg-white rounded-xl">
                 <img src={element.image} alt={element.name} />
               </div>
 
               <div className="col-span-2">
                 <p>name: {element.name}</p>
                 <p>price: {element.price}$</p>
-                <p>promotion:</p>
+                {/* <p>promotion:</p> */}
               </div>
 
               <div>
@@ -56,21 +56,26 @@ const Table: FC<TableProps> = ({}) => {
                   </select>
                 </div>
                 <div>
-                  <button className="bg-rose-500 hover:bg-rose-600 py-2 px-4 rounded-xl flex items-center gap-1 ">
+                  <button
+                    className="bg-rose-500 hover:bg-rose-600 py-2 px-4 rounded-xl grid grid-flow-col items-center gap-1"
+                    onClick={() => CartCtx.removeItemHandler(element)}
+                  >
                     <RiDeleteBin6Line />
                     Remove
                   </button>
                 </div>
               </div>
             </div>
-            <hr className="mt-10 border border-white" />
+            {CartCtx.cart.length > 1 && (
+              <hr className="mt-10 border border-white" />
+            )}
           </div>
         ))}
       </div>
 
       <div className="bg-shiba-yellow p-4 rounded-xl h-fit">
-        <div className="grid gap-2">
-          <div className="flex justify-between">
+        <div className="grid gap-6">
+          <div className="grid grid-flow-col justify-between">
             <h2 className="text-2xl font-bold">Subtotal</h2>
             <h2 className="text-2xl font-bold">
               {CartCtx.cart.reduce((accu, curr) => accu + curr.price, 0)}$
@@ -79,8 +84,8 @@ const Table: FC<TableProps> = ({}) => {
 
           <p>{CartCtx.cart.length} items</p>
 
-          <div className="flex gap-1 items-center">
-            <p>Your order ships FREE</p>
+          <div className="grid grid-flow-col gap-2 items-center justify-start ">
+            <p className="w-fit">Your order ships FREE</p>
             <MdOutlineLocalShipping />
           </div>
 
