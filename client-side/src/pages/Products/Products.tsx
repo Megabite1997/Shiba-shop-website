@@ -1,10 +1,7 @@
 import React, { FunctionComponent, useContext } from "react";
 import { Link } from "react-router-dom";
 
-import ImagePedigree from "../../assets/food/pedigree.webp";
-import ImageProPlan from "../../assets/food/purina-pro-plan.webp";
-import ImageBlue from "../../assets/food/blue.webp";
-import ImagePurinaBeggine from "../../assets/food/purina-beggin.webp";
+import { listRecommendedItems } from "../../dummyData";
 
 import CartContext from "../../store/cart-context";
 
@@ -30,41 +27,6 @@ const ProductsPage: FunctionComponent = () => {
     { name: "toys", path: "toys" },
     { name: "clothes", path: "clothes" },
     { name: "grooming", path: "grooming" },
-  ];
-
-  const listRecommendedItems = [
-    {
-      image: ImagePedigree,
-      name: "Pedigree",
-      id: 1,
-      details: "Dog food for full growth",
-      stars: 3.5,
-      price: 36,
-    },
-    {
-      image: ImageProPlan,
-      name: "Purina Pro Plan",
-      id: 2,
-      details: "Dog food for full growth",
-      stars: 4.2,
-      price: 40,
-    },
-    {
-      image: ImageBlue,
-      name: "Blue",
-      id: 3,
-      details: "Dog food for full growth",
-      stars: 4.4,
-      price: 48,
-    },
-    {
-      image: ImagePurinaBeggine,
-      name: "Purina Beggin",
-      id: 4,
-      details: "Strips Real Meat with Bacon & Beef Flavored Dog Treats",
-      stars: 4,
-      price: 12,
-    },
   ];
 
   return (
