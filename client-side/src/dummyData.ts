@@ -58,3 +58,44 @@ export const listFoodItems = [
     price: 40,
   },
 ];
+export const listTreatItems = [
+  {
+    image: ImageProPlan,
+    name: "Purina Pro Plan",
+    id: 201,
+    details: "Dog food for full growth",
+    stars: 4.2,
+    price: 40,
+  },
+];
+
+export const listToyItems = [
+  {
+    image: ImageProPlan,
+    name: "Purina Pro Plan",
+    id: 201,
+    details: "Dog food for full growth",
+    stars: 4.2,
+    price: 40,
+  },
+];
+export const listClothItems = [
+  {
+    image: ImageProPlan,
+    name: "Purina Pro Plan",
+    id: 201,
+    details: "Dog food for full growth",
+    stars: 4.2,
+    price: 40,
+  },
+];
+export const listGroomingItems = [
+  {
+    image: ImageProPlan,
+    name: "Purina Pro Plan",
+    id: 201,
+    details: "Dog food for full growth",
+    stars: 4.2,
+    price: 40,
+  },
+];
