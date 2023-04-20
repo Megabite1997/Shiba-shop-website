@@ -39,7 +39,6 @@ const Table: FC<TableProps> = ({}) => {
               <div className="col-span-2">
                 <p>name: {element.name}</p>
                 <p>price: {element.price}$</p>
-                {/* <p>promotion:</p> */}
               </div>
 
               <div>
@@ -78,7 +77,10 @@ const Table: FC<TableProps> = ({}) => {
           <div className="grid grid-flow-col justify-between">
             <h2 className="text-2xl font-bold">Subtotal</h2>
             <h2 className="text-2xl font-bold">
-              {CartCtx.cart.reduce((accu, curr) => accu + curr.price, 0)}$
+              {CartCtx.cart
+                .reduce((accu, curr) => accu + curr.price, 0)
+                .toFixed(2)}
+              $
             </h2>
           </div>
 
