@@ -3,7 +3,6 @@ const url =
   "mongodb+srv://shiba-website:XcAOCEU47u23fWYm@cluster0.7cy61.mongodb.net/?retryWrites=true&w=majority";
 
 const createProduct = async (req, res, next) => {
-  console.log("req.body", req.body);
   const newProduct = {
     name: req.body.name,
     price: req.body.price,
