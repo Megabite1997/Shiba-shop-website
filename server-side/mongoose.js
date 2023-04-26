@@ -18,7 +18,19 @@ const createProduct = async (req, res, next) =>{
         price: req.body.price
     })
 
-    const result = await createdProduct.save() // 'save()', mongoose method, return promise
+    console.log('createdProduct: ', createdProduct)
+    // MongoDB auto generate objectID before sending to save on database
+    // look on the console.
+
+    console.log('createdProduct.id', createdProduct.id)
+    // Mongoose has a helper, "virtual getter", ".id" property, will get ObjectId as a string.
+    
+    console.log('createdProduct._id', createdProduct._id)
+    // "._id" will get as an object.
+
+    const result = await createdProduct.save() // 'save()', mongoose method, return promise.
+
+    console.log('result')
 
     res.json(result)
 }
