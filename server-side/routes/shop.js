@@ -5,10 +5,10 @@ const mongooseMiddleware = require('../mongoose')
 
 router.get("/", getProducts);
 
-router.get('/with-mongoose', mongooseMiddleware.createProduct)
+router.get('/with-mongoose', mongooseMiddleware.getProducts)
 
 router.post("/", createProduct);
 
-
+router.post('/with-mongoose', mongooseMiddleware.createProduct)
 
 module.exports = router;
