@@ -10,18 +10,10 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 const Navbar: React.FC = () => {
   const CartCtx = useContext(CartContext);
 
-  const listNavbarLinks = [
-    { name: "Products", path: "products" },
-    { name: "About Us", path: "about-us" },
-    { name: "Contact Us", path: "contact-us" },
-    { name: "Login / Register", path: "login" },
-    { name: "Cart", path: "cart" },
-  ];
-
   return (
     <header className="fixed w-full flex bg-antiquewhite items-center justify-end p-4 shadow-lg">
       <Link className="mr-auto" to="/">
-        <img className="w-28 md:w-44" src={ImageLogo} alt="Logo" />
+        <img className="w-28 md:w-32 lg:w-44" src={ImageLogo} alt="Logo" />
       </Link>
 
       <div className="md:hidden">
@@ -29,33 +21,8 @@ const Navbar: React.FC = () => {
       </div>
 
       <nav className="hidden md:block">
-        <ul className="list-none m-0 p-0 flex w-full gap-20 mr-10 items-center">
-          {/* {listNavbarLinks.map((element, index) => ( */}
-          {/* <li className="text-lg font-medium" key={index}>
-            <NavLink
-              to={element.path}
-              className={({ isActive }) =>
-                isActive
-                  ? "flex items-center gap-2 text-amber-600 "
-                  : "flex items-center gap-2 hover:text-amber-600"
-              }
-            >
-              {element.path === "login" && <VscAccount />}
-              {element.path === "cart" && (
-                <>
-                  <div className="bg-white py-1 px-3 rounded-full">
-                    {CartCtx.cart.length}
-                  </div>
-                  <AiOutlineShoppingCart />
-                </>
-              )}
-              {element.name}
-              {element.path === "products" && <RiArrowDropDownLine size={30} />}
-            </NavLink>
-          </li> */}
-          {/* ))} */}
-
-          <li className="text-lg font-medium">
+        <ul className="list-none m-0 p-0 flex w-full md:gap-8 lg:gap-14 xl:gap-20 lg:mr-10  items-center">
+          <li className="md:text-sm lg:text-base lg:ml-10 font-medium">
             <NavLink
               to="products"
               className={({ isActive }) =>
@@ -88,7 +55,7 @@ const Navbar: React.FC = () => {
             </div>
           </li>
 
-          <li className="text-lg font-medium">
+          <li className="md:text-sm lg:text-base font-medium">
             <NavLink
               to="about-us"
               className={({ isActive }) =>
@@ -100,7 +67,7 @@ const Navbar: React.FC = () => {
               About us
             </NavLink>
           </li>
-          <li className="text-lg font-medium">
+          <li className="md:text-sm lg:text-base font-medium">
             <NavLink
               to="contact-us"
               className={({ isActive }) =>
@@ -112,7 +79,7 @@ const Navbar: React.FC = () => {
               Contact Us
             </NavLink>
           </li>
-          <li className="text-lg font-medium">
+          <li className="md:text-sm lg:text-base font-medium">
             <NavLink
               to="login"
               className={({ isActive }) =>
@@ -124,7 +91,7 @@ const Navbar: React.FC = () => {
               Login / Register <VscAccount />
             </NavLink>
           </li>
-          <li className="text-lg font-medium">
+          <li className="md:text-sm lg:text-base font-medium">
             <NavLink
               to="cart"
               className={({ isActive }) =>
