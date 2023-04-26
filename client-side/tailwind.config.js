@@ -7,6 +7,10 @@ module.exports = {
         "shiba-yellow": "#fdc724",
         antiquewhite: "#faebd7",
       },
+      fontFamily: {
+        Outfit: ["Outfit", "sans-serif"],
+        Lato: ["Lato", "sans-serif"],
+      },
 
       keyframes: {
         fadeIn: {
