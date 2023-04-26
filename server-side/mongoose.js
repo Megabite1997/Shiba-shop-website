@@ -1,12 +1,12 @@
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 
 const Product = require('./models/product')
 
-mongoose.connect('mongodb+srv://shiba-website:XcAOCEU47u23fWYm@cluster0.7cy61.mongodb.net/products_test?retryWrites=true&w=majority').then(() =>{
-    console.log('Connected to database!')
-}).catch(() =>{
-    console.log('Connection failed!')
-})
+// mongoose.connect('mongodb+srv://shiba-website:XcAOCEU47u23fWYm@cluster0.7cy61.mongodb.net/products_test?retryWrites=true&w=majority').then(() =>{
+//     console.log('Connected to database!')
+// }).catch(() =>{
+//     console.log('Connection failed!')
+// })
 // connection between our backend and MongoDB database. 
 // don't have to open, or close each time we create a new product.
 // All managed by Mongoose.
