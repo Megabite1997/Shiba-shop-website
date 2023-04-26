@@ -1,9 +1,12 @@
 const express = require("express");
-router = express.Router();
+const router = express.Router();
+const { getProducts, createProduct } = require("../mongo");
 
-router.get("/", (req, res, next) => {
-  console.log("GET Request in Places");
-  res.json({ message: "It works!" });
-});
+
+router.get("/", getProducts);
+
+router.post("/", createProduct);
+
+
 
 module.exports = router;
