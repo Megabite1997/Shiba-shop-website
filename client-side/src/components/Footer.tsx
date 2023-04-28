@@ -6,7 +6,7 @@ interface FooterProps {}
 
 const Footer: FC<FooterProps> = ({}) => {
   return (
-    <footer className="mt-auto grid grid-flow-col min-[320px]:text-ss md:text-base bg-red-500 justify-around p-4">
+    <footer className="mt-auto grid grid-flow-col min-[320px]:text-ss md:text-base bg-antiquewhite justify-around p-4">
       <div className="flex items-center">
         <p>Copyright</p>
         <AiOutlineCopyright />
