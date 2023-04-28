@@ -1,6 +1,10 @@
 # Tada & Shiba shop
 
-Website for buying Shiba Inu things
+Dummy ecommerce website, "Tada & Shiba shop" for buying Shiba Inu things, such as food and grooming.
+
+### Languages
+- JavaScript
+- TypeScript
 
 ### JavaScript library
 - React
@@ -9,6 +13,9 @@ Website for buying Shiba Inu things
 - React router
 - Axios
 - React Hook Form
+
+### CSS Framework
+- Tailwind
 
 ### Test library
 - Jest
