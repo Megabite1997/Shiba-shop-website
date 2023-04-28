@@ -20,7 +20,7 @@ const ListItemsCard: FC<ListItemsCardProps> = ({ title, list }) => {
         <h2 className="text-2xl font-semibold pb-10 capitalize">{title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-10 p-10 bg-white rounded-2xl justify-center">
           {list.map((element, index) => (
-            <div className="bg-amber-600 max-w-16 rounded-xl" key={index}>
+            <div className="bg-amber-600 rounded-xl" key={index}>
               <div className="p-4 h-80">
                 <img
                   className="h-full mx-auto"
@@ -38,7 +38,7 @@ const ListItemsCard: FC<ListItemsCardProps> = ({ title, list }) => {
                 </div>
 
                 <button
-                  className="bg-lime-700 hover:bg-lime-900 py-2 text-white max-h-10 rounded-xl"
+                  className="bg-lime-700 hover:bg-lime-900 py-2 text-white rounded-xl"
                   onClick={() => addCartHandler(element)}
                 >
                   Add to cart
