@@ -5,7 +5,7 @@ import ImagePetShop from "../assets/pet_shop_600.jpeg";
 const AboutUsPage: React.FC = () => {
   return (
     <div className="pt-20 md:pt-40 bg-shiba-yellow h-screen">
-      <div className="flex gap-10 bg-white p-10 md:mx-40 mt-10 shadow-xl">
+      <div className="grid md:grid-flow-col gap-10 bg-white p-10 md:mx-40 mt-10 shadow-xl">
         <div>
           <h1 className="text-3xl font-semibold">About Us</h1>
           <p className="pt-5 text-base">
@@ -26,7 +26,11 @@ const AboutUsPage: React.FC = () => {
           </p>
         </div>
 
-        <img className="w-4/12 h-24" src={ImagePetShop} alt="pet shop" />
+        <img
+          className="max-w-1/2 md:max-w-full"
+          src={ImagePetShop}
+          alt="pet shop"
+        />
       </div>
     </div>
   );
