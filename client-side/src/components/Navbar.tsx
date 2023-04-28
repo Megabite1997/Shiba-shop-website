@@ -17,7 +17,24 @@ const Navbar: React.FC = () => {
       </Link>
 
       <div className="md:hidden">
-        <GiHamburgerMenu />
+        <GiHamburgerMenu className="peer" />
+        <div className="absolute bg-white hidden peer-hover:flex hover:flex flex-col w-28 shadow-xl right-4">
+          <NavLink className="hover:bg-slate-200 p-2" to="products">
+            Products
+          </NavLink>
+          <NavLink className="hover:bg-slate-200 p-2" to="about-us">
+            About Us
+          </NavLink>
+          <NavLink className="hover:bg-slate-200 p-2" to="contact-us">
+            Contact Us
+          </NavLink>
+          <NavLink className="hover:bg-slate-200 p-2" to="login">
+            Loigin / Register
+          </NavLink>
+          <NavLink className="hover:bg-slate-200 p-2" to="cart">
+            Cart
+          </NavLink>
+        </div>
       </div>
 
       <nav className="hidden md:block">

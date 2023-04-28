@@ -25,7 +25,6 @@ const ProductsPage: FunctionComponent = () => {
           </Link>
         ))}
       </div>
-
       <ListItemsCard title="Recommended items" list={listRecommendedItems} />
     </div>
   );
