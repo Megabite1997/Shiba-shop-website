@@ -1,40 +1,44 @@
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
-import { AiOutlineCopyright } from "react-icons/ai";
 
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = ({}) => {
   return (
-    <footer className="mt-auto grid grid-flow-col min-[320px]:text-ss md:text-base bg-antiquewhite justify-around p-4">
-      <div className="flex items-center">
-        <p>Copyright</p>
-        <AiOutlineCopyright />
-        <p>2023 Tada & Shiba Inc. All rights reserved</p>
+    <footer className="mt-auto py-10 grid grid-flow-col min-[320px]:text-ss md:text-sm bg-antiquewhite justify-around p-4 capitalize">
+      <div>
+        <h4>main manu</h4>
+        <hr className="h-px border-0 bg-black my-4" />
+        <div className="grid gap-2">
+          <p>products</p>
+          <p>about us</p>
+          <p>contact us</p>
+          <p>login / register</p>
+        </div>
       </div>
-
-      <div className="flex">
-        <Link
-          className="border-r border-white px-4 hover:underline"
-          to="policy"
-        >
-          Privacy Policy
-        </Link>
-        <Link className="border-r border-white px-4 hover:underline" to="terms">
-          Terms of Use
-        </Link>
-        <Link
-          className="border-r border-white px-4 hover:underline"
-          to="sales-and-refunds"
-        >
-          Sales and Refunds
-        </Link>
-        <Link className="border-r border-white px-4 hover:underline" to="legal">
-          Legal
-        </Link>
-        <Link className="px-4 hover:underline" to="site-map">
-          Site Map
-        </Link>
+      <div>
+        <h4>more info</h4>
+        <hr className="h-px border-0 bg-black my-4" />
+        <div className="grid gap-2">
+          <p>return & exchange policy</p>
+          <p>privacy policy</p>
+          <p>terms of service</p>
+        </div>
+      </div>
+      <div>
+        <h4>newsletter</h4>
+        <hr className="h-px border-0 bg-black my-4" />
+        <div className="grid gap-2">
+          <p>follow us to get special offers.</p>
+          <div className="relative flex items-center justify-end">
+            <input
+              placeholder="your-email@example.com"
+              className="border border-slate-400 rounded-2xl p-2 pl-5 w-full md:w-80"
+            />
+            <button className="absolute mr-2 bg-shiba-yellow px-2 py-1 rounded-xl">
+              join
+            </button>
+          </div>
+        </div>
       </div>
     </footer>
   );
