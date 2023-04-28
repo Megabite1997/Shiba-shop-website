@@ -15,11 +15,11 @@ const RegistrationPage: React.FC = () => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <div className="grid md:grid-cols-2  bg-shiba-yellow">
-        <div className="bg-white pt-44 px-28 h-screen">
+      <div className="grid md:grid-cols-2 bg-shiba-yellow">
+        <div className="bg-white pt-32 md:pt-44 px-4 md:px-28 md:h-screen pb-10">
           <h1 className="font-bold text-4xl mb-12">Create an Account </h1>
 
-          <div className="grid grid-flow-col gap-6 mt-8 mx-2">
+          <div className="grid md:grid-flow-col gap-6 mt-8 mx-2">
             <div>
               <label className="ml-1">First Name</label>
               <input
@@ -73,8 +73,8 @@ const RegistrationPage: React.FC = () => {
             </button>
           </div>
 
-          <div>
-            <p className="text-center mt-8">
+          <div className="mt-6">
+            <p className="text-center">
               Have an account already?
               <Link className="text-amber-500 hover:underline ml-1" to="/login">
                 Login
@@ -82,7 +82,7 @@ const RegistrationPage: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="pt-60">
+        <div className="md:pt-60">
           <img src={ImageShibaSit} alt="Shiba sits" />
         </div>
       </div>

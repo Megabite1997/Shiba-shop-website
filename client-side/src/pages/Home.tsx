@@ -1,20 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-import { BiBone } from "react-icons/bi";
+// import { BiBone } from "react-icons/bi";
 
 const HomePage: React.FC = () => {
-  const listSubPages = [
-    { name: "food", path: "products/food" },
-    { name: "treats", path: "products/treats" },
-    { name: "toys", path: "products/toys" },
-    { name: "clothes", path: "products/clothes" },
-    { name: "grooming", path: "products/grooming" },
-  ];
+  // const listSubPages = [
+  //   { name: "food", path: "products/food" },
+  //   { name: "treats", path: "products/treats" },
+  //   { name: "toys", path: "products/toys" },
+  //   { name: "clothes", path: "products/clothes" },
+  //   { name: "grooming", path: "products/grooming" },
+  // ];
 
   return (
-    <div className="grid md:grid-cols-2 w-full h-screen pt-24 bg-shiba-yellow px-4">
-      <div className="bg-shiba-smile w-full h-full bg-cover animate-fade-in hidden md:block"></div>
+    <div className="block md:grid md:grid-cols-2 w-full h-screen pt-24 bg-shiba-yellow px-4">
+      <div className="bg-shiba-smile w-full h-52 md:h-full bg-contain bg-no-repeat md:bg-cover animate-fade-in"></div>
 
       <div className="md:mt-[30%] animate-fade-in">
         <h1 className="text-5xl text-center md:text-start pt-10">

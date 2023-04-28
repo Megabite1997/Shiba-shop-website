@@ -18,7 +18,7 @@ const LoginPage: React.FC = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="grid md:grid-cols-2  bg-shiba-yellow">
-        <div className="bg-white pt-44 px-28 h-screen">
+        <div className="bg-white pt-32 md:pt-44 px-4 md:px-28 md:h-screen pb-10">
           <div className="mb-10">
             <h1 className="font-bold text-4xl mb-2">Welcome back</h1>
             <p className="ml-1">Please enter your details</p>
@@ -82,7 +82,7 @@ const LoginPage: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="pt-60 ">
+        <div className="md:pt-60 ">
           <img src={ImageShibaSit} alt="Shiba sits" />
         </div>
       </div>
