@@ -14,12 +14,8 @@ A dummy ecommerce website, "Tada & Shiba shop" for buying Shiba Inu things, such
 
 ### React packages
 - React router
-- Axios
-- React Hook Form
 
 ### CSS Framework
 - Tailwind
 
-### Test library
-- Jest
 
