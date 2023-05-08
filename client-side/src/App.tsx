@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./pages/Root";
-import ProductsPage from "./pages/Products/Products";
+import ProductsPage from "./pages/Products";
 import HomePage from "./pages/Home";
 import AboutUsPage from "./pages/AboutUs";
 import LoginPage from "./pages/Login";
