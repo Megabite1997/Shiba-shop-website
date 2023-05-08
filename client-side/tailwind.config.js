@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         Outfit: ["Outfit", "sans-serif"],
         Lato: ["Lato", "sans-serif"],
+        Merriweather: ["Merriweather", "sans-serif"],
       },
 
       fontSize: {
@@ -32,10 +33,22 @@ module.exports = {
           "75% ": { transform: "rotate(-3deg)" },
           "100%": { transform: "rotate(0deg)" },
         },
+        down: {
+          "0%": {
+            transform: "translate(0)",
+          },
+          "20%": {
+            transform: "translateY(15px)",
+          },
+          "40%": {
+            transform: "translate(0)",
+          },
+        },
       },
       animation: {
         "fade-in": "fadeIn 1s",
         "tilt-shaking": "tilt_shaking 0.5s infinite",
+        "scroll-down": "down 1.5s infinite",
       },
       backgroundImage: {
         "shiba-smile": "url('/src/assets/shiba/shiba-no-bg.png')",
