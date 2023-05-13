@@ -1,15 +1,15 @@
 import React from "react";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 import ImageShibaCropped from "../assets/shiba/shiba-no-bg.png";
-import FeaturedProducts from "../components/FeaturedProducts";
+import Categories from "../components/Categories";
 
 const HomePage: React.FC = () => {
   return (
     <div>
-      <div className="block md:grid md:grid-cols-2 w-full  pt-24 bg-shiba-yellow px-4">
+      <div className="block md:grid md:grid-cols-2 w-full   pt-24 bg-shiba-yellow px-4">
         <img src={ImageShibaCropped} alt="Shiba smiles" />
 
-        <div className="flex items-center xl:pb-32">
+        <div className="flex items-center lg:pb-32">
           <div className="animate-fade-in">
             <h1 className="text-4xl xl:text-5xl text-center md:text-start pt-10">
               Welcome to Tada & Shiba shop
@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
         </div> */}
       </div>
 
-      {/* <FeaturedProducts /> */}
+      <Categories />
     </div>
   );
 };

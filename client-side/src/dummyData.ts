@@ -1,8 +1,8 @@
-import ImagePedigree from "./assets/food/pedigree.webp";
-import ImageProPlan from "./assets/food/purina-pro-plan.webp";
-import ImageBlue from "./assets/food/blue.webp";
-import ImagePurinaBeggine from "./assets/food/purina-beggin.webp";
-import ImageGumby from "./assets/toys/gumby-dog-toy.webp";
+import ImagePedigree from "./assets/products/food/pedigree.webp";
+import ImageProPlan from "./assets/products/food/purina-pro-plan.webp";
+import ImageBlue from "./assets/products/food/blue.webp";
+import ImagePurinaBeggine from "./assets/products/food/purina-beggin.webp";
+import ImageGumby from "./assets/products/toys/gumby-dog-toy.webp";
 import ImagePottyBells from "./assets/potty_bell.webp";
 
 export const listRecommendedItems = [

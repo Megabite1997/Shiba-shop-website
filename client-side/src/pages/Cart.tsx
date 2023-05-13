@@ -1,14 +1,10 @@
 import React, { FC, useContext } from "react";
 import CartContext from "../store/cart-context";
-
 import ImageEmptyBox from "../assets/empty-box.jpeg";
-
 import CartItems from "../components/CartItems";
 import { Link } from "react-router-dom";
 
-interface CartProps {}
-
-const Cart: FC<CartProps> = ({}) => {
+const Cart: FC = () => {
   const CartCtx = useContext(CartContext);
   const { cart } = CartCtx;
   return (
