@@ -3,6 +3,14 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      animation: {
+        "fade-in": "fadeIn 1s",
+        "tilt-shaking": "tilt_shaking 0.5s infinite",
+        "scroll-down": "down 1.5s infinite",
+      },
+      backgroundImage: {
+        "shiba-smile": "url('/src/assets/shiba/shiba-no-bg.png')",
+      },
       colors: {
         "shiba-yellow": "#fdc724",
         antiquewhite: "#faebd7",
@@ -12,9 +20,17 @@ module.exports = {
         Lato: ["Lato", "sans-serif"],
         Merriweather: ["Merriweather", "sans-serif"],
       },
-
       fontSize: {
         ss: ["10px", "14px"],
+      },
+
+      height: {
+        "screen-90": "90vh",
+        "screen-91": "91vh",
+        "screen-92": "92vh",
+        "screen-93": "93vh",
+        "screen-94": "94vh",
+        "screen-95": "95vh",
       },
 
       keyframes: {
@@ -45,15 +61,6 @@ module.exports = {
           },
         },
       },
-      animation: {
-        "fade-in": "fadeIn 1s",
-        "tilt-shaking": "tilt_shaking 0.5s infinite",
-        "scroll-down": "down 1.5s infinite",
-      },
-      backgroundImage: {
-        "shiba-smile": "url('/src/assets/shiba/shiba-no-bg.png')",
-      },
-
       maxWidth: {
         0: "0px",
         px: "1px",
