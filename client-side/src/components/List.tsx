@@ -1,20 +1,28 @@
-import React, { FC, useRef } from "react";
+import React, { FC, useRef, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import ListItem from "./ListItem";
 
 interface ListProps {}
 
 const List: FC<ListProps> = ({}) => {
+  const [slideNumber, setSlideNumber] = useState<number>(0);
+
   const listRef = useRef<HTMLInputElement>(null);
 
   const handleClick = (direction: string) => {
-    if (direction === "left") {
-      listRef.current!.style.transform = "translateX(240px)";
+    let distance = listRef.current!.getBoundingClientRect().x - 50; // 50 comes from 'margin-left', ml-12.5
+
+    if (direction === "left" && slideNumber > 0) {
+      setSlideNumber(slideNumber - 1);
+      listRef.current!.style.transform = `translateX(${240 + distance}px)`;
     }
 
-    if (direction === "right") {
+    if (direction === "right" && slideNumber < 2) {
+      setSlideNumber(slideNumber + 1);
+      listRef.current!.style.transform = `translateX(${-240 + distance}px)`;
     }
   };
+
   return (
     <div>
       <h1 className="ml-12.5 font-bold text-xl">Categories</h1>
@@ -22,12 +30,17 @@ const List: FC<ListProps> = ({}) => {
       <div className="relative overflow-hidden py-10">
         {/* Wrapper */}
         <MdChevronLeft
-          className="absolute top-0 bottom-0 m-auto left-0 cursor-pointer "
+          className={`absolute top-0 bottom-0 m-auto left-0 cursor-pointer z-10 ${
+            slideNumber === 0 && "hidden"
+          }`}
           color="red"
           size={40}
           onClick={() => handleClick("left")}
         />
-        <div className="flex w-max ml-12.5" ref={listRef}>
+        <div
+          className="flex w-max ml-12.5 transition duration-400 ease-in"
+          ref={listRef}
+        >
           {/* Container */}
           <ListItem category="food" />
           <ListItem category="treats" />
