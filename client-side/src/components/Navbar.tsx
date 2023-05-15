@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
 
       <div className="md:hidden">
         <GiHamburgerMenu className="peer" />
-        <div className="absolute bg-white hidden peer-hover:flex hover:flex flex-col w-28 shadow-xl right-4">
+        <div className="absolute bg-slate-100 hidden peer-hover:flex hover:flex flex-col w-28 shadow-xl right-4">
           <NavLink className="hover:bg-slate-200 p-2" to="products">
             Products
           </NavLink>
