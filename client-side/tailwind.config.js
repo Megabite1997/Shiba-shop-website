@@ -30,6 +30,9 @@ module.exports = {
       },
 
       height: {
+        33: "132px",
+        34: "136px",
+        35: "140px",
         "screen-90": "90vh",
         "screen-91": "91vh",
         "screen-92": "92vh",

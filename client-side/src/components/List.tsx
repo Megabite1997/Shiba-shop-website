@@ -1,6 +1,7 @@
 import React, { FC, useRef, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import ListItem from "./ListItem";
+import { categoriesData } from "../dummyData";
 
 interface ListProps {}
 
@@ -17,14 +18,14 @@ const List: FC<ListProps> = ({}) => {
       listRef.current!.style.transform = `translateX(${240 + distance}px)`;
     }
 
-    if (direction === "right" && slideNumber < 2) {
+    if (direction === "right" && slideNumber < 3) {
       setSlideNumber(slideNumber + 1);
       listRef.current!.style.transform = `translateX(${-240 + distance}px)`;
     }
   };
 
   return (
-    <div>
+    <div className="py-10">
       <h1 className="ml-12.5 font-bold text-xl">Categories</h1>
 
       <div className="relative overflow-hidden py-10">
@@ -42,14 +43,10 @@ const List: FC<ListProps> = ({}) => {
           ref={listRef}
         >
           {/* Container */}
-          <ListItem category="food" />
-          <ListItem category="treats" />
-          <ListItem category="toys" />
-          <ListItem category="clothes" />
-          <ListItem category="grooming" />
-          <ListItem category="pharmacy" />
-          <ListItem category="beds" />
-          <ListItem category="flea & tick" />
+
+          {categoriesData.map((element, index) => (
+            <ListItem category={element} key={index} />
+          ))}
         </div>
         <MdChevronRight
           className="absolute top-0 bottom-0 m-auto right-0 cursor-pointer"
