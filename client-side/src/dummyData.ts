@@ -57,6 +57,22 @@ export const listFoodItems = [
     stars: 4.2,
     price: 40,
   },
+  {
+    image: ImageBlue,
+    name: "Blue",
+    id: 103,
+    details: "Dog food for full growth",
+    stars: 4.4,
+    price: 48,
+  },
+  {
+    image: ImagePedigree,
+    name: "Pedigree",
+    id: 101,
+    details: "Dog food for full growth",
+    stars: 3.5,
+    price: 36,
+  },
 ];
 export const listTreatItems = [
   {
