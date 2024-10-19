@@ -25,9 +25,7 @@ const signup = async (req, res, next) => {
   }
 
   if (existingUser) {
-    return res
-      .status(409)
-      .json({ message: "This email is already registered." });
+    return res.status(409).json({ error: "This email is already registered." });
   }
 
   let hashedPassword;
@@ -58,7 +56,12 @@ const signup = async (req, res, next) => {
     return next(error);
   }
 
-  res.status(201).json({ user: createdUser.toObject({ getters: true }) });
+  res
+    .status(201)
+    .json({
+      user: createdUser.toObject({ getters: true }),
+      message: "User registered successfully",
+    });
 };
 
 exports.signup = signup;
