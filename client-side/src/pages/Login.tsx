@@ -3,20 +3,35 @@ import { Link } from "react-router-dom";
 
 import ImageShibaSit from "../assets/shiba/shiba-sit.jpg";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import InputField from "../components/InputField";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { loginSchema } from "../schemas/loginSchema";
+
+interface IFormInput {
+  email: string;
+  password: string;
+}
 
 const LoginPage: React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(loginSchema),
+  });
+
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const showPasswordHandler = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (event: React.FormEvent): void => {
-    event.preventDefault();
-  };
+  const onSubmit: SubmitHandler<IFormInput> = async (data) => {};
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="grid md:grid-cols-2  bg-shiba-yellow">
         <div className="bg-white pt-32 md:pt-44 px-4 md:px-28 md:h-screen pb-10">
           <div className="mb-10">
@@ -27,22 +42,27 @@ const LoginPage: React.FC = () => {
           <h1 className="text-2xl">Log In</h1>
           <div className="mt-8 mx-2">
             <div>
-              <label className="ml-1">E-mail</label>
-              <input
-                type="email"
+              <InputField
+                register={register}
                 name="email"
-                placeholder="E-mail"
-                className="border border-slate-400 rounded-2xl w-full p-2 pl-5 mt-2"
+                type="text"
+                label="Email"
+                placeholder="Email"
+                maxLength={30}
+                error={errors.email}
               />
             </div>
           </div>
 
           <div className="mt-8 mx-2 relative">
-            <label className="ml-1">Password</label>
-            <input
-              type={showPassword ? "text" : "password"}
+            <InputField
+              register={register}
+              name="password"
+              type="password"
+              label="Password"
               placeholder="Password"
-              className="border border-slate-400 rounded-2xl w-full p-2 pl-5 mt-2"
+              maxLength={30}
+              error={errors.password}
             />
             <button
               className="absolute top-11 right-3"

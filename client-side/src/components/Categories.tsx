@@ -21,7 +21,6 @@ const Categories: FC = () => {
           size={40}
           onClick={sliderLeft}
         />
-        {/* ---------------------------------------------------------------- */}
         <div className="flex max-w-max" id="slider">
           {categoriesArray.map((category, index) => (
             <div key={index}>
@@ -32,11 +31,9 @@ const Categories: FC = () => {
                   alt={category.name}
                 />
               </div>
-              {/* <p className="text-center mt-4">{category.name}</p> */}
             </div>
           ))}
         </div>
-        {/* ---------------------------------------------------------------- */}
         <MdChevronRight
           className="absolute left-0"
           size={40}

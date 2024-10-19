@@ -1,61 +1,108 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import ImageShibaSit from "../assets/shiba/shiba-sit.jpg";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { registerSchema } from "../schemas/registerSchema";
+import InputField from "../components/InputField";
+
+interface IFormInput {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+}
 
 const RegistrationPage: React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(registerSchema),
+  });
+
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const showPasswordHandler = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (event: React.FormEvent): void => {
-    event.preventDefault();
+  // const handleSubmit = (event: React.FormEvent): void => {
+  //   event.preventDefault();
+  // };
+
+  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+    try {
+      const response = await fetch("http://localhost:3005/user/register", {
+        method: "POST",
+        body: JSON.stringify({ ...data }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const jsonResponse = await response.json();
+
+      console.log("jsonResponse: ", jsonResponse);
+    } catch (error) {
+      console.log("error: ", error);
+    }
   };
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="grid md:grid-cols-2 bg-shiba-yellow">
         <div className="bg-white pt-32 md:pt-44 px-4 md:px-28 md:h-screen pb-10">
           <h1 className="font-bold text-4xl mb-12">Create an Account </h1>
 
           <div className="grid md:grid-flow-col gap-6 mt-8 mx-2">
             <div>
-              <label className="ml-1">First Name</label>
-              <input
+              <InputField
+                register={register}
+                name="firstName"
                 type="text"
-                placeholder="Full Name"
+                label="First Name"
+                placeholder="First Name"
                 maxLength={30}
-                className="border border-slate-400 rounded-2xl w-full p-2 pl-5 mt-2"
+                error={errors.firstName}
               />
             </div>
             <div>
-              <label className="ml-1">Last Name</label>
-              <input
+              <InputField
+                register={register}
+                name="lastName"
                 type="text"
+                label="Last Name"
                 placeholder="Last Name"
                 maxLength={30}
-                className="border border-slate-400 rounded-2xl w-full p-2 pl-5 mt-2"
+                error={errors.lastName}
               />
             </div>
           </div>
 
           <div className="mt-8 mx-2">
-            <label className="ml-1">E-mail</label>
-            <input
-              type="email"
-              placeholder="E-mail"
-              className="border border-slate-400 rounded-2xl w-full p-2 pl-5 mt-2"
+            <InputField
+              register={register}
+              name="email"
+              type="text"
+              label="Email"
+              placeholder="Email"
+              maxLength={30}
+              error={errors.email}
             />
           </div>
 
           <div className="mt-8 mx-2 relative">
-            <label className="ml-1">Password</label>
-            <input
-              type={showPassword ? "text" : "password"}
+            <InputField
+              register={register}
+              name="password"
+              type="password"
+              label="Password"
               placeholder="Password"
-              className="border border-slate-400 rounded-2xl w-full p-2 pl-5 mt-2"
+              maxLength={30}
+              error={errors.password}
             />
+
             <button
               className="absolute top-11 right-3"
               onClick={showPasswordHandler}

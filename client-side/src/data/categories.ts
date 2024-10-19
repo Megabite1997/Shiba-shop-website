@@ -1,5 +1,5 @@
 import ImageKibble from "../assets/products/food/kibble.webp";
-import ImageChewyBeef from "../assets/products/treats/Chewy Beef.webp";
+import ImageChewyBeef from "../assets/products/treats/ChewyBeef.webp";
 import ImageBalls2 from "../assets/products/toys/balls2.webp";
 import ImageCloth from "../assets/products/clothes/shirt.webp";
 import ImageGrooming from "../assets/products/grooming/shampoo.webp";
