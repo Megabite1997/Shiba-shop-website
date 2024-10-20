@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 app.use("/admin", adminRoutes);
 app.use("/products", shopRoutes);
-app.use("/auth", authRoutes);
+app.use("/user", authRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
