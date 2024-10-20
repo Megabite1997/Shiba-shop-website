@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./pages/Root";
@@ -14,6 +13,7 @@ import Cart from "./pages/Cart";
 import Clothes from "./pages/Products/Clothes";
 import Grooming from "./pages/Products/Grooming";
 import Treats from "./pages/Products/Treats";
+import PrivateRoute from "./components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +31,14 @@ const router = createBrowserRouter([
       { path: "contact-us", element: <ContactUs /> },
       { path: "login", element: <LoginPage /> },
       { path: "register", element: <RegistrationPage /> },
-      { path: "cart", element: <Cart /> },
+      {
+        path: "cart",
+        element: (
+          <PrivateRoute>
+            <Cart />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);
