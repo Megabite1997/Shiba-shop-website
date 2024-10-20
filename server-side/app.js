@@ -8,7 +8,7 @@ const app = express();
 
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
-const userRoutes = require("./routes/user");
+const authRoutes = require("./routes/auth");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 app.use("/admin", adminRoutes);
 app.use("/products", shopRoutes);
-app.use("/user", userRoutes);
+app.use("/auth", authRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
