@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 import ImageShibaSit from "../assets/shiba/shiba-sit.jpg";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import InputField from "../components/InputField";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "../schemas/loginSchema";
-
-interface IFormInput {
-  email: string;
-  password: string;
-}
+import { useAuth } from "../store/auth-context";
 
 const LoginPage: React.FC = () => {
   const {
@@ -22,16 +20,37 @@ const LoginPage: React.FC = () => {
     resolver: yupResolver(loginSchema),
   });
 
+  const { login } = useAuth();
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const showPasswordHandler = () => {
     setShowPassword(!showPassword);
   };
 
-  const onSubmit: SubmitHandler<IFormInput> = async (data) => {};
+  const handleSubmitForm = handleSubmit(
+    async (data) => {
+      try {
+        const response = await axios.post(
+          "http://localhost:3005/user/login",
+          data,
+        );
+        console.log("response: ", response);
+        login(response.data.token);
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          console.log("error: ", error);
+        } else {
+          console.error("Unknown error: ", error);
+        }
+      }
+    },
+    (error) => {
+      console.log("error: ", error);
+    },
+  );
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmitForm}>
       <div className="grid md:grid-cols-2  bg-shiba-yellow">
         <div className="bg-white pt-32 md:pt-44 px-4 md:px-28 md:h-screen pb-10">
           <div className="mb-10">
@@ -84,7 +103,7 @@ const LoginPage: React.FC = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-shiba-yellow mt-10 py-1 px-8 rounded-2xl cursor-pointer"
+              className="bg-shiba-yellow mt-10 py-1 px-8 rounded-2xl cursor-pointer hover:bg-yellow-600"
             >
               Login
             </button>

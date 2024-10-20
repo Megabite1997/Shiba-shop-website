@@ -117,7 +117,7 @@ const RegistrationPage: React.FC = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-shiba-yellow mt-10 py-1 px-8 rounded-2xl cursor-pointer"
+              className="bg-shiba-yellow mt-10 py-1 px-8 rounded-2xl cursor-pointer hover:bg-yellow-600"
             >
               Sign Up
             </button>
