@@ -24,7 +24,7 @@ const ContactUs: FC<ContactUsProps> = ({}) => {
             </a>
           </div>
 
-          <p>Phone: 096-444-6464</p>
+          <p>Phone: 094-444-9494</p>
         </div>
 
         <img src={ImageContactUs} alt="Contact Us" />

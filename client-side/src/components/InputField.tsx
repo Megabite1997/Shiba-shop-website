@@ -33,7 +33,9 @@ const InputField: FC<InputFieldProps> = ({
         type={type}
         placeholder={placeholder}
         maxLength={maxLength}
-        className={`border border-slate-400 rounded-2xl w-full p-2 pl-5 mt-2 ${className}`}
+        className={`border border-slate-400 rounded-2xl w-full p-2 pl-5 mt-2 ${className} ${
+          error && `border-red-500`
+        }`}
         {...register(name)}
       />
       {error && (

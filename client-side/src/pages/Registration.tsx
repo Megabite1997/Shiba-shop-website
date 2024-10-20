@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
 import ImageShibaSit from "../assets/shiba/shiba-sit.jpg";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { registerSchema } from "../schemas/registerSchema";
@@ -18,6 +19,7 @@ const RegistrationPage: React.FC = () => {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(registerSchema),
@@ -29,23 +31,24 @@ const RegistrationPage: React.FC = () => {
     setShowPassword(!showPassword);
   };
 
-  // const handleSubmit = (event: React.FormEvent): void => {
-  //   event.preventDefault();
-  // };
-
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     try {
-      const response = await fetch("http://localhost:3005/user/register", {
-        method: "POST",
-        body: JSON.stringify({ ...data }),
-        headers: { "Content-Type": "application/json" },
-      });
-
-      const jsonResponse = await response.json();
-
-      console.log("jsonResponse: ", jsonResponse);
+      const response = await axios.post(
+        "http://localhost:3005/user/register",
+        data,
+      );
+      console.log("response: ", response);
     } catch (error) {
-      console.log("error: ", error);
+      if (axios.isAxiosError(error)) {
+        if (error.status === 409)
+          setError("email", {
+            type: "custom",
+            message: "This email is already in use",
+          });
+        else console.error("error: ", error);
+      } else {
+        console.error("Unknown error: ", error);
+      }
     }
   };
 
