@@ -4,7 +4,7 @@
 
 
 # Tools
-[![My Skills](https://skillicons.dev/icons?i=js,ts,react,tailwind,nodejs,express&perline=10)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,ts,react,tailwind,nodejs,express,mongodb&perline=10)](https://skillicons.dev)
 
 A dummy ecommerce website, "Tada & Shiba shop" for buying Shiba Inu things, such as food and grooming.
 
