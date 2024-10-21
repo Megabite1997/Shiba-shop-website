@@ -6,6 +6,7 @@ import AboutUsPage from "./pages/AboutUs";
 import LoginPage from "./pages/Login";
 import RegistrationPage from "./pages/Registration";
 import ErrorPage from "./pages/Error";
+import Products from "./pages/Products";
 import Toys from "./pages/Products/Toys";
 import Food from "./pages/Products/Food";
 import ContactUs from "./pages/ContactUs";
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: "products", element: <Products /> },
       { path: "products/food", element: <Food /> },
       { path: "products/treats", element: <Treats /> },
       { path: "products/toys", element: <Toys /> },

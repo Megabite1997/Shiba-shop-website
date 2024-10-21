@@ -29,7 +29,6 @@ const List: FC<ListProps> = ({}) => {
       <h1 className="ml-12.5 font-bold text-xl">Categories</h1>
 
       <div className="relative overflow-hidden py-10">
-        {/* Wrapper */}
         <MdChevronLeft
           className={`absolute top-0 bottom-0 m-auto left-0 cursor-pointer z-10 ${
             slideNumber === 0 && "hidden"
@@ -42,8 +41,6 @@ const List: FC<ListProps> = ({}) => {
           className="flex w-max ml-12.5 transition duration-400 ease-in"
           ref={listRef}
         >
-          {/* Container */}
-
           {categoriesData.map((element, index) => (
             <ListItem category={element} key={index} />
           ))}

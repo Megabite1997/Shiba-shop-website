@@ -77,13 +77,14 @@ const LoginPage: React.FC = () => {
             <InputField
               register={register}
               name="password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               label="Password"
               placeholder="Password"
               maxLength={30}
               error={errors.password}
             />
             <button
+              type="button"
               className="absolute top-11 right-3"
               onClick={showPasswordHandler}
             >
