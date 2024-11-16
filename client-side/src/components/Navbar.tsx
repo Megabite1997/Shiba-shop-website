@@ -6,9 +6,11 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import CartContext from "../store/cart-context";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { useAuth } from "../store/auth-context";
 
 const Navbar: React.FC = () => {
   const CartCtx = useContext(CartContext);
+  const { isAuthenticated } = useAuth();
 
   return (
     <header className="fixed w-full flex bg-white items-center justify-end p-2 px-10 shadow-lg">
@@ -28,9 +30,13 @@ const Navbar: React.FC = () => {
           <NavLink className="hover:bg-slate-200 p-2" to="contact-us">
             Contact Us
           </NavLink>
-          <NavLink className="hover:bg-slate-200 p-2" to="login">
-            Loigin / Register
-          </NavLink>
+          {isAuthenticated ? (
+            <NavLink className="hover:bg-slate-200 p-2" to="login">
+              Loigin / Register
+            </NavLink>
+          ) : (
+            <NavLink to="/user-account"></NavLink>
+          )}
           <NavLink className="hover:bg-slate-200 p-2" to="cart">
             Cart
           </NavLink>

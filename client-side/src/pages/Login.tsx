@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 import ImageShibaSit from "../assets/shiba/shiba-sit.jpg";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import InputField from "../components/InputField";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "../schemas/loginSchema";
 import { useAuth } from "../store/auth-context";
+import { loginUser } from "../services/authApi";
+import BoxError from "../components/BoxError";
 
 const LoginPage: React.FC = () => {
   const {
@@ -20,44 +22,41 @@ const LoginPage: React.FC = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const { login } = useAuth();
+  const { login, isAuthenticated, token } = useAuth();
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [error, setError] = useState<string | undefined>("");
 
   const showPasswordHandler = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmitForm = handleSubmit(
-    async (data) => {
-      try {
-        const response = await axios.post(
-          "http://localhost:3005/user/login",
-          data,
-        );
-        console.log("response: ", response);
-        login(response.data.token);
-      } catch (error) {
-        if (axios.isAxiosError(error)) {
-          console.log("error: ", error);
-        } else {
-          console.error("Unknown error: ", error);
-        }
+  const loginHandler = async (data: { email: string; password: string }) => {
+    try {
+      const responseData = await loginUser(data);
+      console.log("response: ", responseData);
+      login(responseData.token);
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        setError("Invalid login or password.");
+      } else {
+        console.error("Unknown error: ", error);
       }
-    },
-    (error) => {
-      console.log("error: ", error);
-    },
-  );
+    }
+  };
+
+  const handleSubmitForm = handleSubmit(loginHandler, (error) => {
+    console.error("Validation error: ", error);
+  });
 
   return (
     <form onSubmit={handleSubmitForm}>
       <div className="grid md:grid-cols-2  bg-shiba-yellow">
-        <div className="bg-white pt-32 md:pt-44 px-4 md:px-28 md:h-screen pb-10">
+        <div className="bg-white pt-32 md:pt-44 px-4 md:px-28 pb-10">
           <div className="mb-10">
             <h1 className="font-bold text-4xl mb-2">Welcome back</h1>
             <p className="ml-1">Please enter your details</p>
           </div>
-
+          {error && <BoxError className="mb-6" errorMessage={error} />}
           <h1 className="text-2xl">Log In</h1>
           <div className="mt-8 mx-2">
             <div>
@@ -72,7 +71,6 @@ const LoginPage: React.FC = () => {
               />
             </div>
           </div>
-
           <div className="mt-8 mx-2 relative">
             <InputField
               register={register}
@@ -91,7 +89,6 @@ const LoginPage: React.FC = () => {
               {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
             </button>
           </div>
-
           <div className="mx-2 text-right mt-4 mr-4">
             <Link
               className="hover:underline text-amber-500"
@@ -100,7 +97,6 @@ const LoginPage: React.FC = () => {
               Forget password?
             </Link>
           </div>
-
           <div className="text-center">
             <button
               type="submit"
@@ -109,7 +105,6 @@ const LoginPage: React.FC = () => {
               Login
             </button>
           </div>
-
           <div>
             <p className="text-center mt-8">
               Don't have an account?
@@ -122,7 +117,7 @@ const LoginPage: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="md:pt-60 ">
+        <div className="md:pt-60 animate-fade-in">
           <img src={ImageShibaSit} alt="Shiba sits" />
         </div>
       </div>
