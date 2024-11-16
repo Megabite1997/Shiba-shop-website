@@ -6,7 +6,11 @@ const HomePage: React.FC = () => {
   return (
     <div>
       <div className="block md:grid md:grid-cols-2 w-full pt-24 bg-shiba-yellow px-4">
-        <img src={ImageShibaCropped} alt="Shiba smiles" />
+        <img
+          className="animate-fade-in"
+          src={ImageShibaCropped}
+          alt="Shiba smiles"
+        />
 
         <div className="flex items-center lg:pb-32">
           <div className="animate-fade-in">

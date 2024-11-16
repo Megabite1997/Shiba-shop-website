@@ -133,7 +133,7 @@ const RegistrationPage: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="md:pt-60">
+        <div className="md:pt-60 animate-fade-in">
           <img src={ImageShibaSit} alt="Shiba sits" />
         </div>
       </div>

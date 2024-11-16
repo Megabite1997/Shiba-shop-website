@@ -7,7 +7,7 @@ interface ContactUsProps {}
 const ContactUs: FC<ContactUsProps> = ({}) => {
   return (
     <div className="pt-20 md:pt-40 bg-shiba-yellow h-screen">
-      <div className="grid md:grid-flow-col gap-10 bg-white p-10 md:mx-20 lg:mx-40 mt-10 shadow-xl justify-between">
+      <div className="grid md:grid-flow-col gap-10 bg-white p-10 md:mx-20 lg:mx-40 mt-10 shadow-xl justify-between animate-fade-in">
         <div>
           <h1 className="text-3xl font-semibold">Contact Us</h1>
           <h4 className="pt-10 text-lg font-semibold">Shop location</h4>
