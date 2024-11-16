@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import ListItem from "./ListItem";
 import { categoriesData } from "../dummyData";

@@ -121,40 +121,48 @@ export const categoriesData = [
     name: "food",
     image:
       "https://burnspet.co.uk/app/uploads/2019/05/005.-Active-Kibble-1.jpg",
+    path: "food",
   },
   {
     name: "treats",
     image:
       "https://cms-www.chewy.com/contentAsset/image/1186893f-4876-4d28-adb2-fe1fe87cfe40/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/444/resize_h/444/2023-02-Dog-Treats-ePLP-Recipe2-3-50345.jpg",
+    path: "treats",
   },
   {
     name: "toys",
     image:
       "https://cms-www.chewy.com/contentAsset/image/985092ea-1353-463d-891c-e8bc536cfebd/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/444/resize_h/444/177819-D0g-Toys-summer.jpg",
+    path: "toys",
   },
   {
     name: "clothes",
     image:
       "https://lzd-img-global.slatic.net/g/p/efe835fb41ff8939af0fd99d3f42b93f.jpg_720x720q80.jpg_.webp",
+    path: "clothes",
   },
   {
     name: "grooming",
     image:
       "https://hips.hearstapps.com/hmg-prod/images/how-to-bathe-dog-1587137329.jpg",
+    path: "grooming",
   },
   {
     name: "pharmacy",
     image:
       "https://cms-www.chewy.com/contentAsset/image/aaa13a2a-f49b-45d3-b399-6cb22f54c06a/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/444/resize_h/444/Pharmacy-460px-Winter21.jpg",
+    path: "pharmacy",
   },
   {
     name: "beds",
     image:
       "https://cms-www.chewy.com/contentAsset/image/15f79ca1-6f02-4d70-bf72-216902448c1b/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/444/resize_h/444/1295140-Beds-Dog.jpg",
+    path: "bed",
   },
   {
     name: "flea & tick",
     image:
       "https://cms-www.chewy.com/contentAsset/image/4f08e918-2436-471f-b53a-17a002eeac93/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/444/resize_h/444/2023-05-Recipe-2-FrontlinePlus-Dog-FleaTick.jpg",
+    path: "flea-tick",
   },
 ];
