@@ -11,11 +11,19 @@ interface Props {
   children: ReactElement;
 }
 
+type UserInfo = {
+  // Define the properties of userInfo here
+  name?: string;
+  email?: string;
+  // Add other properties as needed
+};
+
 interface AuthContextProps {
   token: string | null;
   isAuthenticated: boolean;
   login: (jwtToken: string) => void;
   logout: () => void;
+  setUserInfo: React.Dispatch<React.SetStateAction<UserInfo | undefined>>;
 }
 
 const AuthContext = createContext<AuthContextProps>({
@@ -23,11 +31,13 @@ const AuthContext = createContext<AuthContextProps>({
   isAuthenticated: false,
   login: () => {},
   logout: () => {},
+  setUserInfo: () => {},
 });
 
 export const AuthProviderProvider: FC<Props> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState<string | null>(null);
+  const [userInfo, setUserInfo] = useState<UserInfo | undefined>(undefined);
 
   // Check if a token exists in localStorage on page load
   useEffect(() => {
@@ -52,8 +62,15 @@ export const AuthProviderProvider: FC<Props> = ({ children }) => {
     setToken(null);
   };
 
+  useEffect(() => {
+    if (userInfo && Object.keys(userInfo).length)
+      console.log("userInfo: ", userInfo);
+  }, [userInfo]);
+
   return (
-    <AuthContext.Provider value={{ token, isAuthenticated, login, logout }}>
+    <AuthContext.Provider
+      value={{ token, isAuthenticated, login, logout, setUserInfo }}
+    >
       {children}
     </AuthContext.Provider>
   );
