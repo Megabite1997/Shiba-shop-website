@@ -1,32 +1,20 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const cors = require("cors");
+const routes = require("./routes");
 
 require("dotenv").config();
 
 const app = express();
 
-const adminRoutes = require("./routes/admin");
-const shopRoutes = require("./routes/shop");
-const authRoutes = require("./routes/auth");
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//Ignore CORS
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization",
-  );
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
-  next();
-});
+// Allow all origins
+app.use(cors());
 
-app.use("/admin", adminRoutes);
-app.use("/products", shopRoutes);
-app.use("/user", authRoutes);
+app.use("/api", routes);
 
 mongoose
   .connect(process.env.MONGO_URI)
