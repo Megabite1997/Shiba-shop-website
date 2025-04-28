@@ -1,10 +1,10 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 interface Props {
   children: string | JSX.Element;
 }
 
-interface CartProps {
+export interface CartProps {
   image: string;
   name: string;
   id: number;
@@ -16,21 +16,32 @@ interface CartProps {
 
 interface CartContextProps {
   cart: CartProps[];
-  addItemsHandler: (item: CartProps) => void;
+  addItemsHandler: (item: CartProps, itemQuantity?: number) => void;
   removeItemHandler: (item: CartProps) => void;
 }
 
 const CartContext = React.createContext<CartContextProps>({
   cart: [],
-  addItemsHandler: (item) => {},
-  removeItemHandler: (item) => {},
+  addItemsHandler: () => {},
+  removeItemHandler: () => {},
 });
 
 export const CartContextProvider: FC<Props> = (props) => {
   const [cart, setCart] = useState<CartProps[]>([]);
 
-  const addItemsHandler = (item: CartProps): void => {
-    setCart((prevState) => [...prevState, item]);
+  const addItemsHandler = (item: CartProps, itemQuantity?: number): void => {
+    const existingItemId = cart.some((element) => element.id === item.id);
+    if (existingItemId) {
+      const updatedCart = cart.map((element) => {
+        if (element.id === item.id) {
+          return { ...element, quantity: itemQuantity || element.quantity + 1 };
+        }
+        return element;
+      });
+      setCart(updatedCart);
+    } else {
+      setCart((prevState) => [...prevState, item]);
+    }
   };
 
   const removeItemHandler = (item: CartProps): void => {

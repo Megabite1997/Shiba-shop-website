@@ -8,7 +8,7 @@ const Cart: FC = () => {
   const CartCtx = useContext(CartContext);
   const { cart } = CartCtx;
   return (
-    <div className="pt-40">
+    <div className="pt-40 pb-20">
       {cart.length <= 0 && (
         <div className="text-center">
           <h1 className="pt-10 text-3xl font-bold ">Your cart is empty.</h1>

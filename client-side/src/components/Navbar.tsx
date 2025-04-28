@@ -125,7 +125,7 @@ const Navbar: React.FC = () => {
             >
               Cart <AiOutlineShoppingCart />
               <div className="bg-slate-200 py-1 px-3 rounded-full">
-                {CartCtx.cart.length}
+                {CartCtx.cart.reduce((acc, item) => acc + item.quantity, 0)}
               </div>
             </NavLink>
           </li>
