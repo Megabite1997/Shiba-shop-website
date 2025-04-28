@@ -5,9 +5,7 @@ import CartContext from "../store/cart-context";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdOutlineLocalShipping } from "react-icons/md";
 
-interface TableProps {}
-
-const Table: FC<TableProps> = ({}) => {
+const Table: FC = () => {
   const CartCtx = useContext(CartContext);
 
   const optionSelectsJSX = (): JSX.Element[] => {

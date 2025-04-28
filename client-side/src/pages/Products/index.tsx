@@ -1,8 +1,6 @@
 import { FC } from "react";
 
-interface ProductsPageProps {}
-
-const ProductsPage: FC<ProductsPageProps> = ({}) => {
+const ProductsPage: FC = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <p className="text-2xl">Products</p>

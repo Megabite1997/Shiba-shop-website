@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -22,7 +21,7 @@ const LoginPage: React.FC = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const { login, isAuthenticated, token } = useAuth();
+  const { login } = useAuth();
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [error, setError] = useState<string | undefined>("");
 

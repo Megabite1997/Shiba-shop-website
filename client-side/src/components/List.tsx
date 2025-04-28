@@ -3,9 +3,7 @@ import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import ListItem from "./ListItem";
 import { categoriesData } from "../dummyData";
 
-interface ListProps {}
-
-const List: FC<ListProps> = ({}) => {
+const List: FC = () => {
   const [slideNumber, setSlideNumber] = useState<number>(0);
 
   const listRef = useRef<HTMLInputElement>(null);
