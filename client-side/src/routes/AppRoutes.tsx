@@ -1,19 +1,21 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import RootLayout from "../pages/Root";
 import HomePage from "../pages/Home";
-import AboutUsPage from "../pages/AboutUs";
-import LoginPage from "../pages/Login";
-import RegistrationPage from "../pages/Registration";
 import ErrorPage from "../pages/Error";
-import Products from "../pages/Products";
-import Toys from "../pages/Products/Toys";
-import Food from "../pages/Products/Food";
-import ContactUs from "../pages/ContactUs";
-import Cart from "../pages/Cart";
-import Clothes from "../pages/Products/Clothes";
-import Grooming from "../pages/Products/Grooming";
-import Treats from "../pages/Products/Treats";
-// import PrivateRoute from "../components/PrivateRoute";
+
+// Lazy-loaded components
+const Products = lazy(() => import("../pages/Products"));
+const Food = lazy(() => import("../pages/Products/Food"));
+const Treats = lazy(() => import("../pages/Products/Treats"));
+const Toys = lazy(() => import("../pages/Products/Toys"));
+const Clothes = lazy(() => import("../pages/Products/Clothes"));
+const Grooming = lazy(() => import("../pages/Products/Grooming"));
+const AboutUsPage = lazy(() => import("../pages/AboutUs"));
+const ContactUs = lazy(() => import("../pages/ContactUs"));
+const LoginPage = lazy(() => import("../pages/Login"));
+const RegistrationPage = lazy(() => import("../pages/Registration"));
+const Cart = lazy(() => import("../pages/Cart"));
 
 const router = createBrowserRouter([
   {
@@ -22,22 +24,92 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "products", element: <Products /> },
-      { path: "products/food", element: <Food /> },
-      { path: "products/treats", element: <Treats /> },
-      { path: "products/toys", element: <Toys /> },
-      { path: "products/clothes", element: <Clothes /> },
-      { path: "products/grooming", element: <Grooming /> },
-      { path: "about-us", element: <AboutUsPage /> },
-      { path: "contact-us", element: <ContactUs /> },
-      { path: "login", element: <LoginPage /> },
-      { path: "register", element: <RegistrationPage /> },
+      {
+        path: "products",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Products />
+          </Suspense>
+        ),
+      },
+      {
+        path: "products/food",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Food />
+          </Suspense>
+        ),
+      },
+      {
+        path: "products/treats",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Treats />
+          </Suspense>
+        ),
+      },
+      {
+        path: "products/toys",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Toys />
+          </Suspense>
+        ),
+      },
+      {
+        path: "products/clothes",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Clothes />
+          </Suspense>
+        ),
+      },
+      {
+        path: "products/grooming",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Grooming />
+          </Suspense>
+        ),
+      },
+      {
+        path: "about-us",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <AboutUsPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "contact-us",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <ContactUs />
+          </Suspense>
+        ),
+      },
+      {
+        path: "login",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <LoginPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "register",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <RegistrationPage />
+          </Suspense>
+        ),
+      },
       {
         path: "cart",
         element: (
-          // <PrivateRoute>
-          <Cart />
-          // </PrivateRoute>
+          <Suspense fallback={<p>Loading...</p>}>
+            <Cart />
+          </Suspense>
         ),
       },
     ],
