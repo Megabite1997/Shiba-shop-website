@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import ImageContactUs from "../assets/contact-us.jpeg";
+import ImageContactUs from "../assets/contact-us.webp";
 
 const ContactUs: FC = () => {
   return (

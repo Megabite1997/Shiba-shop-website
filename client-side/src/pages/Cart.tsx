@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
 import CartContext from "../store/cart-context";
-import ImageEmptyBox from "../assets/empty-box.jpeg";
+import ImageEmptyBox from "../assets/empty-box.webp";
 import CartItems from "../components/CartItems";
 import { Link } from "react-router-dom";
 

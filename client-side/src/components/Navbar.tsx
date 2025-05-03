@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
-import LogoShiba from "../assets/shiba/shiba-logo.png";
+import LogoShiba from "../assets/shiba/shiba-logo.webp";
 import { VscAccount } from "react-icons/vsc";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import CartContext from "../store/cart-context";

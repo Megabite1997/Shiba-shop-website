@@ -1,5 +1,5 @@
 import React from "react";
-import ImageShibaCropped from "../assets/shiba/shiba-no-bg.png";
+import ImageShibaCropped from "../assets/shiba/shiba-no-bg.webp";
 import List from "../components/List";
 
 const HomePage: React.FC = () => {

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import ImageShibaSit from "../assets/shiba/shiba-sit.jpg";
+import ImageShibaSit from "../assets/shiba/shiba-sit.webp";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { registerSchema } from "../schemas/registerSchema";
 import InputField from "../components/InputField";

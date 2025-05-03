@@ -5,14 +5,14 @@ import ImagePurinaBeggine from "./assets/products/food/purina-beggin.webp";
 import ImageGumby from "./assets/products/toys/gumby-dog-toy.webp";
 import ImagePottyBells from "./assets/potty_bell.webp";
 
-import ImageTreats from "./assets/categories/treats.jpg";
-import ImageFood from "./assets/categories/food.jpg";
-import ImageToys from "./assets/categories/toys.jpg";
+import ImageTreats from "./assets/categories/treats.webp";
+import ImageFood from "./assets/categories/food.webp";
+import ImageToys from "./assets/categories/toys.webp";
 import ImageClothes from "./assets/categories/clothes.webp";
-import ImageGrooming from "./assets/categories/grooming.jpg";
-import ImagePharmacy from "./assets/categories/pharmacy.png";
-import ImageBeds from "./assets/categories/beds.jpg";
-import ImageFleaTick from "./assets/categories/flea-tick.jpg";
+import ImageGrooming from "./assets/categories/grooming.webp";
+import ImagePharmacy from "./assets/categories/pharmacy.webp";
+import ImageBeds from "./assets/categories/beds.webp";
+import ImageFleaTick from "./assets/categories/flea-tick.webp";
 
 export const listRecommendedItems = [
   {

@@ -1,6 +1,6 @@
 import React from "react";
 
-import ImagePetShop from "../assets/pet_shop_600.jpeg";
+import ImagePetShop from "../assets/pet_shop.webp";
 
 const AboutUsPage: React.FC = () => {
   return (

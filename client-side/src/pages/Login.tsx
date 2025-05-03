@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import ImageShibaSit from "../assets/shiba/shiba-sit.jpg";
+import ImageShibaSit from "../assets/shiba/shiba-sit.webp";
 import InputField from "../components/InputField";
 import { loginSchema } from "../schemas/loginSchema";
 import { useAuth } from "../store/auth-context";
