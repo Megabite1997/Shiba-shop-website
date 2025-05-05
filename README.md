@@ -24,7 +24,10 @@ A dummy ecommerce website, "Tada & Shiba shop" for buying Shiba Inu things, such
 
 ### React packages
 
-- React router
+- React Router
+- React Hook Form
+- React Icons
+- React Toastify
 
 ### CSS Framework
 
