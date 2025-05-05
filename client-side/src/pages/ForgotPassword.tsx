@@ -2,9 +2,10 @@ import React, { FC } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-import clsx from "clsx";
-
 import ShibaLogo from "../assets/shiba/shiba-logo.webp";
+import InputField from "../components/InputField";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { forgotPasswordSchema } from "../schemas/forgotPasswordSchema";
 
 interface Inputs {
   email: string;
@@ -16,7 +17,9 @@ const ForgotPassword: FC = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm({
+    resolver: yupResolver(forgotPasswordSchema),
+  });
 
   const goToLogin = () => {
     navigate("/login");
@@ -42,20 +45,14 @@ const ForgotPassword: FC = () => {
           className="mt-8 mx-2 flex flex-col"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <input
-            type="email"
-            {...register("email", { required: true })}
-            className={clsx(
-              "px-4 py-2 rounded-2xl border-2 focus:outline-none ",
-              errors.email
-                ? "border-red-500"
-                : "border-shiba-yellow focus:border-shiba-yellow",
-            )}
+          <InputField
+            register={register}
+            name="email"
+            type="text"
             placeholder="Email Address"
+            maxLength={30}
+            error={errors.email}
           />
-          {errors.email && (
-            <span className="text-red-500 mt-2 ml-2">Email is required !</span>
-          )}
 
           <button
             type="submit"

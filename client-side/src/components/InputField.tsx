@@ -1,12 +1,13 @@
 import { FC } from "react";
 import { FieldError, UseFormRegister } from "react-hook-form";
+import clsx from "clsx";
 
 interface InputFieldProps {
-  label: string;
+  label?: string;
   name: string;
   type: string;
-  register: UseFormRegister<any>; // Register from react-hook-form
-  error?: FieldError; // Error handling
+  register: UseFormRegister<any>;
+  error?: FieldError;
   placeholder?: string;
   maxLength?: number;
   className?: string;
@@ -33,9 +34,11 @@ const InputField: FC<InputFieldProps> = ({
         type={type}
         placeholder={placeholder}
         maxLength={maxLength}
-        className={`border border-slate-400 rounded-2xl w-full p-2 pl-5 mt-2 ${className} ${
-          error && `border-red-500`
-        }`}
+        className={clsx(
+          "border rounded-2xl w-full p-2 pl-5 mt-2",
+          className,
+          error ? "border-red-500" : "border-slate-400",
+        )}
         {...register(name)}
       />
       {error && (

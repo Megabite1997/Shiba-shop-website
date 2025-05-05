@@ -20,7 +20,6 @@ const RegistrationPage: React.FC = () => {
   const {
     register,
     handleSubmit,
-    setError,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(registerSchema),
@@ -38,12 +37,7 @@ const RegistrationPage: React.FC = () => {
       console.log("response: ", response);
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        if (error.status === 409)
-          setError("email", {
-            type: "custom",
-            message: "This email is already in use",
-          });
-        else console.error("error: ", error);
+        console.error("Axios error: ", error.response?.data);
       } else {
         console.error("Unknown error: ", error);
       }
