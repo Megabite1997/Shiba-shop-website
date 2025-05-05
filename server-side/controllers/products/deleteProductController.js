@@ -1,4 +1,4 @@
-const Product = require("../../models/productModel"); // Import the Product model
+const Product = require("../../models/Product"); // Import the Product model
 
 const deleteProduct = async (req, res) => {
   try {

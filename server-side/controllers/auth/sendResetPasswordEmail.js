@@ -1,6 +1,6 @@
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
-const User = require("../models/userModel");
+const User = require("../../models/User");
 
 const sendResetPasswordEmail = async (req, res) => {
   try {
@@ -32,7 +32,7 @@ const sendResetPasswordEmail = async (req, res) => {
 
     // Send the reset email
     const transporter = nodemailer.createTransport({
-      service: "Gmail",
+      service: "Hotmail",
       auth: {
         user: process.env.EMAIL_USER, // Your email address
         pass: process.env.EMAIL_PASS, // Your email password or app password

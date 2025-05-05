@@ -1,8 +1,7 @@
-const User = require("../models/user");
-const bcrypt = require("bcrypt");
+const User = require("../../models/User");
 const jwt = require("jsonwebtoken");
 
-const login = async (req, res, next) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
   try {
     let user = await User.findOne({ email });
@@ -10,7 +9,7 @@ const login = async (req, res, next) => {
     if (!user) {
       return res.status(400).json({ message: "Invalid email or password" });
     }
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await user.comparePassword(password);
 
     if (!isMatch) {
       return res.status(400).json({ message: "Invalid email or password" });
@@ -26,4 +25,4 @@ const login = async (req, res, next) => {
   }
 };
 
-exports.login = login;
+module.exports = login;

@@ -1,4 +1,4 @@
-const Product = require("../../models/productModel"); // Import model
+const Product = require("../../models/Product"); // Import model
 
 const createProduct = async (req, res) => {
   try {

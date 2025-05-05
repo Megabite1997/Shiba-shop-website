@@ -1,4 +1,4 @@
-const User = require("../../models/userModel");
+const User = require("../../models/User");
 const crypto = require("crypto");
 
 const resetPassword = async (req, res) => {

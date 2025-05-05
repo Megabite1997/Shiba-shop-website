@@ -1,13 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const {
-  getProduct,
-  createProduct,
-  updateProduct,
-  deleteProduct,
-} = require("../controllers/products");
-const verifyToken = require("../middleware/verifyToken");
-const checkPermission = require("../middleware/checkPermission");
+const getProduct = require("../controllers/products/getProductController");
+const createProduct = require("../controllers/products/createProductController");
+const updateProduct = require("../controllers/products/updateProductController");
+const deleteProduct = require("../controllers/products/deleteProductController");
+const verifyToken = require("../middleware/authen/verifyToken");
+const checkPermission = require("../middleware/author/checkPermissions");
 
 router.get("/:id?", getProduct); // Public: Anyone can view products
 router.post("/", verifyToken, checkPermission(["admin"]), createProduct); // Only admin can create
