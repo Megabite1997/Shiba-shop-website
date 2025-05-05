@@ -15,6 +15,7 @@ const AboutUsPage = lazy(() => import("../pages/AboutUs"));
 const ContactUs = lazy(() => import("../pages/ContactUs"));
 const LoginPage = lazy(() => import("../pages/Login"));
 const RegistrationPage = lazy(() => import("../pages/Registration"));
+const ForgotPassword = lazy(() => import("../pages/ForgotPassword"));
 const Cart = lazy(() => import("../pages/Cart"));
 
 const router = createBrowserRouter([
@@ -101,6 +102,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<p>Loading...</p>}>
             <RegistrationPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "forgot-password",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <ForgotPassword />
           </Suspense>
         ),
       },

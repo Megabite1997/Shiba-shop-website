@@ -91,9 +91,9 @@ const LoginPage: React.FC = () => {
           <div className="mx-2 text-right mt-4 mr-4">
             <Link
               className="hover:underline text-amber-500"
-              to="/forget-password"
+              to="/forgot-password"
             >
-              Forget password?
+              Forgot password?
             </Link>
           </div>
           <div className="text-center">
