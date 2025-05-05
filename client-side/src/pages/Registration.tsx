@@ -7,6 +7,7 @@ import ImageShibaSit from "../assets/shiba/shiba-sit.webp";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { registerSchema } from "../schemas/registerSchema";
 import InputField from "../components/InputField";
+import { registerUser } from "../services/authApi";
 
 interface IFormInput {
   firstName: string;
@@ -33,10 +34,7 @@ const RegistrationPage: React.FC = () => {
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     try {
-      const response = await axios.post(
-        "http://localhost:3005/user/register",
-        data,
-      );
+      const response = await registerUser(data);
       console.log("response: ", response);
     } catch (error) {
       if (axios.isAxiosError(error)) {
